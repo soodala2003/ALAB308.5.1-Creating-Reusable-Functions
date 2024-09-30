@@ -93,9 +93,9 @@ console.log(filterAgeGreater50(dataArray, filterCallback));
 // Map the array to change the “occupation” key to “job” and increment every age by 1
 function objectMap(callback) {
     const newObject = callback;
-    for (let i = 0; i < newObject .length; i++) {
-        newObject [i].age = Number(newObject [i].age) + 1;
-        ageArray[i] = newObject [i].age;
+    for (let i = 0; i < newObject.length; i++) {
+        newObject[i].age = Number(newObject[i].age) + 1;
+        ageArray[i] = newObject[i].age;
     }
     return newObject;  
 }  
@@ -113,3 +113,26 @@ function reduce (previousValue, currentValue, index) {
 
 console.log("The sum of age is " + sum + ".");
 console.log("The average age is " + sum / ageArray.length + "."); 
+
+// Part 3: Thinking Critically
+// Take an object and increment its age field
+const ageObject = [ {age: 41}, {age: 25}, {age: 19}, {age: 58}, {age: 111} ];
+
+function incrementAge(arrayObject) {
+    const newObj = arrayObject;
+    for (let k = 0; k < arrayObject.length; k++) {
+        if (typeof arrayObject[k].age === 'undefined' ? arrayObject[k].age = 0: arrayObject[k].age);
+        newObj[k].age = arrayObject[k].age + 1;
+    }
+    return newObj;  
+}
+    
+console.log(incrementAge(ageObject));
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy
+const ageObjectCopy = ageObject.map((ele) => ele);
+const incrementAgeCopy = incrementAge(ageObjectCopy);
+
+console.log(incrementAgeCopy);
+
+
